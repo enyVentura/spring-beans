@@ -3,15 +3,15 @@ package app.model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 public class AnimalsCage {
 
-   @Autowired
+    @Autowired
     @Qualifier("dog")
     private Animal animal;
+
     public void whatAnimalSay() {
         System.out.println("Say:");
         System.out.println(animal.toString());
@@ -20,10 +20,9 @@ public class AnimalsCage {
         System.out.println("________________________");
     }
 
-    @Bean(name = "timer")
-    public Timer getTimer(){
-        Timer timer=new Timer();
-        return timer;
+    @Bean
+    public Timer getTimer() {
+        return new Timer();
     }
 
 }
